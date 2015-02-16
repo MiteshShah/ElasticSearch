@@ -63,7 +63,11 @@ bin/plugin -i elasticsearch/marvel/latest
 grep "action.auto_create_index" elasticsearch.yml &> /dev/null
 if [ $? -ne 0 ]; then
 	# Disable Marvel autocreate index
-	echo "action.auto_create_index: -.marvel-*" >> /etc/elasticsearch/elasticsearch.yml
+	#echo "action.auto_create_index: -.marvel-*" >> /etc/elasticsearch/elasticsearch.yml
+	echo "marvel.agent.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
+	# Elasticsearch 1.4 ships with a security setting that prevents Kibana from connecting. You will need to set the following in your elasticsearch.yml
+	echo 'http.cors.allow-origin: "/.*/"' >> /etc/elasticsearch/elasticsearch.yml
+  	echo 'http.cors.enabled: true' >> /etc/elasticsearch/elasticsearch.yml
 fi
 
 # Install/Setup Kibana
