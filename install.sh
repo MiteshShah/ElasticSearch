@@ -11,7 +11,7 @@ ES_CLUSTER_NAME=ES_CLUSTER1
 ES_NODE_NAME=ES_NODE1
 ELASTICSEARCH_VERSION=1.4
 LOGSTASH_VERSION=1.4
-KIBANA_VERSION=3.1.2
+KIBANA_VERSION=4.0.0
 
 # Fetch/Install repository/GPGkey/packages
 echo "Install EPEL repository, please wait..."
@@ -73,10 +73,10 @@ fi
 # Install/Setup Kibana
 echo "Install/Setup Kibana, please wait..."
 cd /usr/share/nginx/html/
-wget -qc https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION.tar.gz
-tar -zxf /usr/share/nginx/html/kibana-$KIBANA_VERSION.tar.gz
-mv kibana-$KIBANA_VERSION /usr/share/nginx/html/kibana
-rm -f kibana-$KIBANA_VERSION.tar.gz
+wget -qc https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION-linux-x64.tar.gz
+tar -zxf /usr/share/nginx/html/kibana-$KIBANA_VERSION-linux-x64.tar.gz
+mv kibana-$KIBANA_VERSION-linux-x64 /usr/share/nginx/html/kibana
+rm -f kibana-$KIBANA_VERSION-linux-x64.tar.gz
 
 # Restart Elasticsearch
 service elasticsearch restart
