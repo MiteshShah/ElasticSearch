@@ -78,6 +78,9 @@ tar -zxf /usr/share/nginx/html/kibana-$KIBANA_VERSION-linux-x64.tar.gz
 mv kibana-$KIBANA_VERSION-linux-x64 /usr/share/nginx/html/kibana
 rm -f kibana-$KIBANA_VERSION-linux-x64.tar.gz
 
+# Disable replicas for kibana4
+sed -i s'/number_of_replicas: 1/number_of_replicas: 0/' /usr/share/nginx/html/kibana/src/public/index.js
+
 # Restart Elasticsearch
 service elasticsearch restart
 nginx -t && service nginx restart
