@@ -59,6 +59,9 @@ echo "Installing Marvel plugin, please wait..."
 cd /usr/share/elasticsearch/
 bin/plugin -i elasticsearch/marvel/latest
 
+echo "Installing ElasticSearch-HQ plugin, please wait..."
+bin/plugin -i royrusso/elasticsearch-HQ
+
 # Disable auto create index and dynamic scripts
 grep "action.auto_create_index" elasticsearch.yml &> /dev/null
 if [ $? -ne 0 ]; then
