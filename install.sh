@@ -9,9 +9,9 @@
 # Define Name & Version
 ES_CLUSTER_NAME=ES_CLUSTER1
 ES_NODE_NAME=ES_NODE1
-ELASTICSEARCH_VERSION=1.4
+ELASTICSEARCH_VERSION=1.5
 LOGSTASH_VERSION=1.4
-KIBANA_VERSION=4.0.0
+KIBANA_VERSION=4.0.2
 
 # Fetch/Install repository/GPGkey/packages
 echo "Install EPEL repository, please wait..."
